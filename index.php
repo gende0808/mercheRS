@@ -1,3 +1,9 @@
+<?PHP
+include("header.php");
+
+?>
+
+
 Hallo Gregory, <br>
 <br>
 Bij deze de informatie die je wilt hebben:<br>
@@ -5,7 +11,12 @@ Bij deze de informatie die je wilt hebben:<br>
 <br>
 <br>
 
+
+
 <?php
+
+
+
 $base_url = "http://services.runescape.com/m=itemdb_oldschool";
 $item_url = "/api/catalogue/detail.json?item=";
 
