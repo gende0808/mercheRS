@@ -14,8 +14,14 @@ Bij deze de informatie die je wilt hebben:<br>
 
 
 <?php
-
-
+try {
+    $user = new User($DB_con, 1);
+    echo $user->getUsername();
+} catch(Exception $e){
+    echo $e;
+}
+    echo "hallo";
+echo "<br>";
 
 $base_url = "http://services.runescape.com/m=itemdb_oldschool";
 $item_url = "/api/catalogue/detail.json?item=";

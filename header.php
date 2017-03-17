@@ -4,6 +4,8 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 ob_start();
 
+include("database/connection.php");
+include("classes/User.php");
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>
@@ -19,28 +21,28 @@ ob_start();
     <meta name="viewport" content="width=device-width, initial-scale=0.9"/>
     <?php header("Content-Type: text/html; charset=utf-8"); ?>
     <meta charset="utf-8">
-    <title>Alanya Krommenie</title>
+    <title>MercheRS</title>
     <meta name="description" content="">
     <link rel="stylesheet" href="bootstrap-3.3.7/css/bootstrap.css">
     <link rel="stylesheet" href="bootstrap-3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
-
-
-    <script src="JQuery/jquery-3.2.0.min.js"></script>
-    <script>
-        $(window).load(function () {
-            // Animate loader off screen
-            $(".se-pre-con").fadeOut("slow");
-        });
-    </script>
 </head>
 
 <body>
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="#">MercheRS
             </a>
+        </div>
+        <div class="pull-right">
+            <ul class="nav navbar-nav">
+                <li>
+                    <button type="submit" class="btn navbar-btn btn-success" name="logout" id="logout" value="Log Out">
+                        Sign in
+                    </button>
+                </li>
+            </ul>
         </div>
     </div>
 </nav>
