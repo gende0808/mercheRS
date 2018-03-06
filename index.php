@@ -1,6 +1,6 @@
 <?PHP
 include("header.php");
-
+set_time_limit(10000);
 ?>
 
 
@@ -20,37 +20,34 @@ try {
 } catch(Exception $e){
     echo $e;
 }
-    echo "hallo";
-echo "<br>";
+
 
 $base_url = "http://services.runescape.com/m=itemdb_oldschool";
 $item_url = "/api/catalogue/detail.json?item=";
 
 
-//for($a=0; $a<30; $a++){
+//$item = new Item($DB_con);
+//
+//$item->setItemname('een item');
+//$item->setDescription('het is een item');
+//$item->setItemprice(12345);
+//$item->setRsid(11);
+//$item->create();
+for($a=0; $a<30; $a++){
 
-    echo "Curernt recursion number = "."2"."<br>";
-    //$item_nr = $a;
     //file_get_contents() is being surpressed while also getting checked for returning false.
-    $unparsed_JSON = @file_get_contents($base_url . $item_url . "2");
-    if($unparsed_JSON == false){
-        echo "het is false";
-    } else {
+    $unparsed_JSON = @file_get_contents($base_url . $item_url . $a);
+    if($unparsed_JSON !== false){
         $item_object = json_decode($unparsed_JSON);
-        var_dump($item_object);
-        echo "<br>";
-        echo "<br>";
-        echo "<br>";
-        echo "<br>";
-        echo "<br>";
-        echo "<br>";
-        echo "<br>";
-        echo "<br>";
-        echo $item_object->{'item'}->{'name'};
+        $item = new Item($DB_con);
+        $item->setRsid($item_object->{'item'}->{'id'});
+        $item->setItemprice($item_object->{'item'}->{'current'}->{'price'});
+        $item->setDescription($item_object->{'item'}->{'description'});
+        $item->setItemname($item_object->{'item'}->{'name'});
+        $item->create();
     }
-    sleep(1);
-echo "<br><br><br>";
-echo "<br><br><br>";
+}
 
-//}
+echo 'loop is done';
+
 ?>

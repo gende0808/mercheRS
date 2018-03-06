@@ -2,7 +2,7 @@
 
 $DB_host = "localhost";
 $DB_user = "root";
-$DB_pass = "password";
+$DB_pass = "";
 $DB_name = "merchers";
 
 

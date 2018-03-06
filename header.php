@@ -6,6 +6,7 @@ ob_start();
 
 include("database/connection.php");
 include("classes/User.php");
+include("classes/Item.php");
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>
@@ -23,8 +24,8 @@ include("classes/User.php");
     <meta charset="utf-8">
     <title>MercheRS</title>
     <meta name="description" content="">
-    <link rel="stylesheet" href="bootstrap-3.3.7/css/bootstrap.css">
-    <link rel="stylesheet" href="bootstrap-3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap-4.0.0-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bootstrap-4.0.0-dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
 </head>
 
